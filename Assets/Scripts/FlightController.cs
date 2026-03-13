@@ -1,16 +1,30 @@
+// FlightController.cs
+// CENG 454 – HW1: Sky-High Prototype
+// Author: Eren Celiktener | Student ID: 230444407
 using UnityEngine;
-
 public class FlightController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+[SerializeField] private float pitchSpeed = 45f; // degrees/second
+[SerializeField] private float yawSpeed = 45f; // degrees/second
+[SerializeField] private float rollSpeed = 45f; // degrees/second
+[SerializeField] private float thrustSpeed = 5f; // units/second
+private Rigidbody rb;
+void Start()
+{
+rb = GetComponent<Rigidbody>();
+rb.freezeRotation = true;
+}
+void Update()// or FixedUpdate()
+{
+HandleRotation();
+HandleThrust();
+}
+private void HandleRotation()
+{
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+}
+private void HandleThrust()
+{
+
+}
 }
